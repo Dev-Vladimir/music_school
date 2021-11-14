@@ -34,6 +34,7 @@ body{
 	line-height: 1em;
 	display: flex;
 	align-items: center;
+	font-weight: 800;
 }
 .section-heading>span{
 	flex: 1;
@@ -283,7 +284,7 @@ body{
 }
 .modern-teaching-article>.photo{
 	width: calc(36.5% + var(--padding-from-edges));
-	height: 430px;
+	height: 500px;
 }
 .modern-teaching-article>.photo>img{
 	height: 100%;
