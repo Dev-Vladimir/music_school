@@ -348,6 +348,9 @@ body{
 	margin-top: var(--padding-from-top);
 	margin-left: 25%;
 }
+.contact-form{
+	display: none;
+}
 
 .footer{
 	background: var(--color-dark-grey);
@@ -415,12 +418,208 @@ body{
 		height: 440px
 	}
 	.attractions-articles>.article.second>.photo>img{
-		height: 100;
+		height: 100%;
 	}
 	.modern-teaching-article>.photo{
 		height: 360px
 	}
 	.contact-map{
 		margin-top: calc(0px - var(--padding-from-top) - 43px);
+	}
+}
+
+@media screen and (max-width: 992px){
+	:root{
+		--padding-from-edges: 10px;
+	}
+	.container-fluid{
+		overflow-y: hidden
+	}
+	.section-heading{
+		font-size: 2em
+	}
+	.section-heading>span{
+		height: 10px
+	}
+	.button{
+		width: calc(100vw / 2 - var(--padding-from-edges));
+	}
+	.main-screen{
+		background: url("img/main-screen-bg.jpg") center center no-repeat;
+		background-size: cover
+	}
+	.main-screen-title>h1{
+		font-size: 3em;
+		width: 100%;
+		margin-top: 100px
+	}
+	.main-screen-bg{
+		display: none
+	}
+	.about{
+		margin-top: 0;
+		padding: var(--padding-from-top) 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.about .section-heading{
+		padding-right: var(--padding-from-edges);
+	}
+	.about-img{
+		width: 100%;
+		height: 250px;
+		margin-top: 0;
+		margin-right: 0;
+		overflow: hidden;
+		transform: translateY(72px);
+	}
+	.about-article{
+		width: 100%;
+		margin-top: -250px;
+	}
+	.about-text{
+		margin-top: 290px;
+		flex-wrap: wrap;
+	}
+	.about-text>.text{
+		width: 100%;
+		padding: 0 var(--padding-from-edges);
+	}
+	.about-text>.text>.button{
+		margin: auto
+	}
+	.about-text>.photo{
+		width: 100%;
+		position: static;
+		margin: 0;
+		margin-top: 40px
+	}
+	.attractions{
+		padding: var(--padding-from-top) 0;
+	}
+	.attractions>.section-heading>h2{
+		width: 62.5%;
+		order: 2;
+	}
+	.attractions>.section-heading>span{
+		margin-left: 0
+	}
+	.attractions-articles>.article.first,
+	.attractions-articles>.article.second{
+		width: 100%;
+		padding: 0;
+		flex-wrap: wrap;
+		justify-content: flex-start
+	}
+	.attractions-articles>.article.first>.text,
+	.attractions-articles>.article.second>.text{
+		width: 100%;
+		padding: 0 var(--padding-from-edges);
+		margin-top: 20px
+	}
+	.attractions-articles>.article>.text>.button{
+		margin-top: 20px
+	}
+	.attractions-articles>.article.first>.photo{
+		position: static;
+		width: 62.5%;
+		height: auto;
+		margin-left: 36.5%;
+		margin-top: 20px
+	}
+	.attractions-articles>.article.second>.photo{
+		position: static;
+		width: 87.5%;
+		height: auto
+	}
+	.attractions-articles>.article.second>.photo>img{
+		height: auto
+	}
+	.modern-teaching>.section-heading{
+		padding-left: 0
+	}
+	.modern-teaching>.section-heading>h2{
+		width: 62.5%;
+		order: 2
+	}
+	.modern-teaching>.section-heading>span{
+		margin-left: 0;
+		margin-right: var(--padding-from-edges);
+	}
+	.modern-teaching-article{
+		flex-wrap: wrap;
+	}
+	.modern-teaching-article>.text,
+	.modern-teaching-article>.photo{
+		width: 100%
+	}
+	.modern-teaching-article>.text{
+		order: 2;
+		margin: 20px var(--padding-from-edges);
+	}
+	.links{
+		margin-top: 0;
+		padding: var(--padding-from-top) var(--padding-from-edges);
+	}
+	.links-list{
+		margin-top: 0
+	}
+	.links-item{
+		width: 50%;
+		height: calc(100vw / 2 - 2 * var(--padding-from-edges));
+	}
+	.contact>.d-flex{
+		flex-wrap: wrap;
+	}
+	.contact-map{
+		width: 100%;
+		margin-top: 20px
+	}
+	.contact-text{
+		border:  none;
+		width: 100%;
+		margin-top: 0;
+		padding: 20px var(--padding-from-edges);
+		height: auto;
+		margin-bottom: 40px
+	}
+	.contact-text>.button{
+		display: none
+	}
+	.contact-text>p{
+		width: 100%
+	}
+	.contact-form{
+		display: flex;
+		padding: 0 var(--padding-from-edges);
+	}
+	.contact-form>form{
+		border: 1px solid #000;
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.contact-form>form>input{
+		width: 75%;
+		outline: none;
+		border: none;
+		border-bottom: 1px solid #000;
+		height: 50px;
+		margin-top: 20px
+	}
+	.contact-form>form>textarea{
+		width: 75%;
+		height: 100px;
+		border: 1px solid #000;
+		margin: 20px auto;
+	}
+	.contact-form>form>button{
+		margin-bottom: 20px;
+		background: transparent;
+	}
+	.social-links{
+		width: 75%
 	}
 }
