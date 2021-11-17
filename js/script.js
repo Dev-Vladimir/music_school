@@ -18,6 +18,7 @@ class Menu{
 	toggleMenu(){
 		this.menu.classList.toggle('active');
 		this.burger.classList.toggle('active');
+		document.body.classList.toggle('locked')
 	}
 }
 
