@@ -57,7 +57,14 @@ body.locked>.wrapper{
 	display: flex;
 	align-items: center;
 	font-weight: 800;
+	height: 0;
+	margin-top: 100px;
 	overflow: hidden;
+}
+.section-heading.animation{
+	height: 100px;
+	margin-top: 0;
+	opacity: 1;
 }
 .section-heading>span{
 	flex: 1;
@@ -96,9 +103,24 @@ body.locked>.wrapper{
 	margin-top: 20px;
 }
 .animated{
-	transition: all .3s;
+	transition: all .5s;
 }
-
+.animated.from-left{
+	transform: translateX(-100px);
+	opacity: 0;
+}
+.animated.from-right{
+	transform: translateX(100px);
+	opacity: 0;
+}
+.animated.from-left.animation{
+	transform: translateX(0);
+	opacity: 1;
+}
+.animated.from-right.animation{
+	transform: translateX(0);
+	opacity: 1;
+}
 
 .main-screen{
 	padding: 0 var(--padding-from-edges);
@@ -332,16 +354,8 @@ body.locked>.wrapper{
 	width: 50%;
 }
 .about .section-heading{
-	height: 0;
-	margin-top: 100px;
-	overflow: hidden;
 	margin-left: calc(0px - var(--padding-from-edges));
-	opacity: 0;
-}
-.about .section-heading.animation{
-	height: 100px;
-	margin-top: 0;
-	opacity: 1;
+	/*opacity: 0;*/
 }
 .about .section-heading>span{
 	margin-right: var(--padding-from-edges);
@@ -695,6 +709,9 @@ body.locked>.wrapper{
 	.about-article{
 		width: 100%;
 		margin-top: -250px;
+	}
+	.about .section-heading.animation{
+		margin-top: -20px
 	}
 	.about-text{
 		margin-top: 290px;
