@@ -95,6 +95,9 @@ body.locked>.wrapper{
 .text>p{
 	margin-top: 20px;
 }
+.animated{
+	transition: all .3s;
+}
 
 
 .main-screen{
@@ -229,6 +232,7 @@ body.locked>.wrapper{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	transition: all .3s
 }
 .menu.active{
 	right: 0;
@@ -308,7 +312,19 @@ body.locked>.wrapper{
 	overflow: hidden;
 }
 .about-img>.photo{
-	width: 50vw
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	transition: all .3s;
+	opacity: 0;
+}
+.about-img.animation>.photo{
+	width: 50vw;
+	opacity: 1;
+}
+.about-img>.photo>img{
+	width: auto;
+	height: 100%;
 }
 .about-article{
 	margin-top: 280px;
@@ -316,7 +332,16 @@ body.locked>.wrapper{
 	width: 50%;
 }
 .about .section-heading{
+	height: 0;
+	margin-top: 100px;
+	overflow: hidden;
 	margin-left: calc(0px - var(--padding-from-edges));
+	opacity: 0;
+}
+.about .section-heading.animation{
+	height: 100px;
+	margin-top: 0;
+	opacity: 1;
 }
 .about .section-heading>span{
 	margin-right: var(--padding-from-edges);
@@ -329,9 +354,15 @@ body.locked>.wrapper{
 .about-text>.text{
 	width: 50%;
 	padding-bottom: var(--padding-from-top);
-	overflow: hidden;
+	opacity: 0;
+	transform: translateY(50px);
+}
+.about-text>.text.animation{
+	transform: translateY(0);
+	opacity: 1;
 }
 .about-text p{
+	display: inline-block;
 	margin-bottom: 20px;
 }
 .about-text .button{
@@ -342,7 +373,14 @@ body.locked>.wrapper{
 	width: 50%;
 	height: 740px;
 	right: 0;
+	opacity: 0;
 	margin: 0 calc(0px - var(--padding-from-edges)) 0 20px;
+	transform: translateY(-100px);
+	transition: all .3s;
+}
+.about-text>.photo.animation{
+	opacity: 1;
+	transform: translateY(0);
 }
 
 
@@ -669,11 +707,18 @@ body.locked>.wrapper{
 	.about-text>.text>.button{
 		margin: auto
 	}
+	.about-img.animation>.photo{
+		width: 100%
+	}
 	.about-text>.photo{
 		width: 100%;
 		position: static;
 		margin: 0;
 		margin-top: 40px
+	}
+	.about-img>.photo>img{
+		width: 100%;
+		height: 100%
 	}
 	.attractions{
 		padding: var(--padding-from-top) 0;

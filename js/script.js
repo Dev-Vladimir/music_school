@@ -23,50 +23,18 @@ class Menu{
 }
 
 function aboutScreenAnimation(){
-	let aboutImg = document.querySelector('.about-img'),
-		sectionHeading = document.querySelector('.about .section-heading'),
-		aboutText = document.querySelector('.about-text>.text'),
-		aboutPhoto = document.querySelector('.about-text>.photo'),
-		target = document.querySelector('.about');
-	// console.log(target);
-	aboutPhoto.style.width = '0%';
-	aboutText.style.height = '0%';
-	sectionHeading.style.height = '0%';
-	aboutImg.style.width = '0%';
+	let targets = document.querySelectorAll('.animated');
 	let observer = new IntersectionObserver((entries) => {
+	console.log(entries);
     entries.forEach(entry => {
     	if (entry.isIntersecting){
-	    		anime({
-				  targets: aboutImg,
-				  width: '50%',
-				  duration: 300,
-				  easing: 'easeInOutExpo'
-				});
-				anime({
-				  targets: sectionHeading,
-				  height: '100px',
-				  duration: 300,
-				  delay: 600,
-				  easing: 'easeInOutExpo'
-				});
-				// anime({
-				//   targets: aboutText,
-				//   height: 'auto',
-				//   duration: 300,
-				//   delay: 1200,
-				//   easing: 'easeInOutExpo'
-				// });
-				anime({
-				  targets: aboutPhoto,
-				  width: '50%',
-				  duration: 300,
-				  delay: 600,
-				  easing: 'easeInOutExpo'
-				});
+    			// console.log(entry.target);
+	    		entry.target.classList.add('animation');
+	    		// entry.unobserved();
 	    	}
 	    })
 	}, { threshold: 0.5 })
-	observer.observe(target)
+	targets.forEach(target => {observer.observe(target)});
 }
 
 
