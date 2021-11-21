@@ -49,6 +49,19 @@ function MakeElement(type, styles){
 
 window.onload = function(){
 	new Menu(document.querySelector('.burger'), document.querySelector('.menu-nav'));
+	document.querySelector('.arrow-down').onclick = function(){
+		let aboutScreen = document.querySelector('.about');
+		aboutScreen.scrollIntoView({block: 'start', behavior : 'smooth'});
+	}
 	aboutScreenAnimation();
+	document.querySelector('#show-form').onclick = function(e){
+		e.preventDefault();
+		let formContatiner = document.querySelector('.contact-form'),
+			beforeForm = document.querySelector('.before-contact-form'),
+			linkText = beforeForm.classList.contains('active') ? 'Написать' : 'Отмена'
+		beforeForm.classList.toggle('active');
+		setTimeout(() => {formContatiner.classList.toggle('active')}, 300);
+		this.innerText = linkText;
+	}
 }
 

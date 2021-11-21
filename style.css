@@ -192,14 +192,15 @@ body.locked>.wrapper{
 }
 .burger.active span:nth-child(1){
 	top: 23px;
-	transform: rotate(45deg);
+	transform: rotate(-45deg);
 }
 .burger.active span:nth-child(2){
-	display: none;
+	/*opacity: 0;*/
+	transform: rotate(-135deg);
 }
 .burger.active span:nth-child(3){
 	top: 23px;
-	transform: rotate(-45deg);
+	transform: rotate(-135deg);
 }
 .burger.active:hover span{
 	background: var(--color-dark-grey);
@@ -552,12 +553,13 @@ body.locked>.wrapper{
 .contact-text{
 	width: 50%;
 	margin-right: var(--padding-from-edges);
-	border: 2px solid #000;
-	border-left:  none;
+	/*border: 2px solid #000;
+	border-left:  none;*/
 	height: 70vh;
 	margin-top: var(--padding-from-top);
 	padding-top: var(--padding-from-top);
 	font-size: 1.5em;
+	position: relative;
 }
 .contact-text>p{
 	width: 50%;
@@ -569,8 +571,47 @@ body.locked>.wrapper{
 	margin-top: var(--padding-from-top);
 	margin-left: 25%;
 }
+.before-contact-form{
+	display: flex;
+	position: absolute;
+	top: 0;left: 0;
+	width: 100%; height: 100%;
+	border: 2px solid #000;
+	border-left: none;
+	transition: all .3s;
+	z-index: -1;
+}
+.before-contact-form.active{
+	z-index: 10;
+	left: -100%;
+	width: calc(100% - var(--padding-from-edges));
+	backdrop-filter: blur(7px);
+	border-right: none;
+	border-left: 2px solid #000;
+	margin-left: var(--padding-from-edges);
+}
 .contact-form{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: calc(100% - var(--padding-from-edges));
+	margin-left: var(--padding-from-edges);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+}
+.contact-form>form{
 	display: none;
+}
+.contact-form.active>form{
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .footer{
@@ -754,7 +795,8 @@ body.locked>.wrapper{
 		margin: auto
 	}
 	.about-img.animation>.photo{
-		width: 100%
+		width: 100%;
+		height: 300px
 	}
 	.about-text>.photo{
 		width: 100%;
@@ -796,7 +838,7 @@ body.locked>.wrapper{
 		position: static;
 		width: 62.5%;
 		height: auto;
-		margin-left: 36.5%;
+		margin-left: calc(36.5% + var(--padding-from-edges));
 		margin-top: 20px
 	}
 	.attractions-articles>.article.second>.photo{
@@ -823,11 +865,16 @@ body.locked>.wrapper{
 	}
 	.modern-teaching-article>.text,
 	.modern-teaching-article>.photo{
-		width: 100%
+		width: 100%;
+		height: auto;
 	}
 	.modern-teaching-article>.text{
 		order: 2;
 		margin: 20px var(--padding-from-edges);
+	}
+	.modern-teaching-article>.photo>img{
+		height: auto;
+		width: 100%
 	}
 	.links{
 		margin-top: 0;
@@ -862,7 +909,12 @@ body.locked>.wrapper{
 	.contact-text>p{
 		width: 100%
 	}
+	.before-contact-form{
+		display: none
+	}
 	.contact-form{
+		position: static;
+		height: auto;
 		display: flex;
 		padding: 0 var(--padding-from-edges);
 	}
