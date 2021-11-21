@@ -5,7 +5,6 @@ class Menu{
 		let nav = menu.querySelector('ul');
 		this.nav = nav;
 		nav.remove();
-		// console.log(this);
 		this.createChildrenSigns();
 		menu.append(this.nav);
 		this.burger.addEventListener('click', () => this.toggleMenu());
@@ -16,9 +15,14 @@ class Menu{
 		childrenUl.forEach(ul => (ul.closest('li').querySelector('a').insertAdjacentHTML("afterbegin", '<span><</span>')))
 	}
 	toggleMenu(){
+		let beforeNav = MakeElement('div', ['before-menu']);
+		document.body.append(beforeNav);
+		if (this.menu.classList.contains('active')) {beforeNav.classList.add('active')}
+		setTimeout(() => {beforeNav.classList.toggle('active')})
 		this.menu.classList.toggle('active');
 		this.burger.classList.toggle('active');
 		document.body.classList.toggle('locked')
+		setTimeout(() => {beforeNav.remove()}, 600)
 	}
 }
 
@@ -37,6 +41,11 @@ function aboutScreenAnimation(){
 	targets.forEach(target => {observer.observe(target)});
 }
 
+function MakeElement(type, styles){
+	let elem = document.createElement(type);
+	if (styles) {elem.classList.add(...styles)}
+		return elem;
+}
 
 window.onload = function(){
 	new Menu(document.querySelector('.burger'), document.querySelector('.menu-nav'));

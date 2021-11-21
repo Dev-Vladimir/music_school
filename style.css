@@ -18,8 +18,8 @@
 body{
 	font-family: "Montserrat";
 	font-size: 20px;
-	width: 100vw;
-	overflow-x: hidden;
+	width: 100%;
+	/*overflow-x: hidden;*/
 	transition: all .3s;
 }
 body.locked{
@@ -33,7 +33,7 @@ body.locked{
 	width: 100%;
 }
 body.locked>.wrapper{
-	width: 67.5%;
+	/*width: 67.5%;*/
 	transform: translateX(-32.5%);
 	opacity: .7;
 	/*overflow: hidden;*/
@@ -48,8 +48,8 @@ body.locked>.wrapper{
 	position: absolute;
 }
 .container-fluid{
-	/*width: 100%;*/
-	width: 100vw;
+	width: 100%;
+	/*width: 100vw;*/
 }
 .section-heading{
 	font-size: 2.5em;
@@ -82,11 +82,10 @@ body.locked>.wrapper{
 	border: 1px solid #000;
 	color:  #000;
 	text-decoration: none;
+	transition: all .3s;
 }
 .button:hover{
-	/*color: var(--color-yellow);*/
 	color: #fff;
-	/*border: 1px solid var(--color-yellow);*/
 	border: 1px solid var(--color-dark-grey);
 	background: var(--color-dark-grey);
 }
@@ -125,6 +124,7 @@ body.locked>.wrapper{
 .main-screen{
 	padding: 0 var(--padding-from-edges);
 	height: 100vh;
+	min-height: 700px;
 	justify-content: space-between;
 }
 .main-screen-title{
@@ -176,6 +176,7 @@ body.locked>.wrapper{
 	background: var(--color-dark-grey);
 	position: absolute;
 	left: 0;
+	transition: all .3s;
 }
 .burger:hover span{
 	background: #000
@@ -220,6 +221,7 @@ body.locked>.wrapper{
 	top: 50%;
 	background: var(--color-dark-grey);
 	cursor: pointer;
+	transition: all .3s;
 }
 .arrow-down:hover span{
 	background: #000;
@@ -242,19 +244,34 @@ body.locked>.wrapper{
 .for-blinds:hover{
 	color: var(--color-dark-grey);
 }
+.before-menu{
+	background: var(--color-yellow);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;left: 100%;
+	clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+	z-index: 95;
+	transition: all .3s;
+}
+.before-menu.active{
+	left:  -100%;
+}
 .menu{
 	position: fixed;
 	top: 0; right: -100%;
-	width: calc(50vw - 2 * var(--padding-from-edges));
+	/*width: calc(50vw - 2 * var(--padding-from-edges));*/
+	width: 100%;
 	height: 100vh;
-	background: var(--color-yellow);
-	/*background: rgba(235, 173, 53, .5);*/
+	/*background: var(--color-yellow);*/
+	background: #fff;
 	z-index: 90;
 	padding: var(--padding-from-top) var(--padding-from-edges);
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	transition: all .3s
+	transition: all .3s;
+	/*display: none;*/
 }
 .menu.active{
 	right: 0;
@@ -282,6 +299,7 @@ body.locked>.wrapper{
 }
 .menu-nav li>a{
 	position: relative;
+	transition: all .3s;
 }
 .menu-nav li>a:hover{
 	padding-right: 100px;
@@ -391,16 +409,20 @@ body.locked>.wrapper{
 	margin: 0 calc(0px - var(--padding-from-edges)) 0 20px;
 	transform: translateY(-100px);
 	transition: all .3s;
+	overflow: hidden;
 }
 .about-text>.photo.animation{
 	opacity: 1;
 	transform: translateY(0);
 }
+.about-text>.photo>img{
+	width: auto;
+	height: 100%;
+}
 
 
 .attractions{
 	padding: var(--padding-from-top) var(--padding-from-edges);
-
 }
 .attractions>.section-heading>span{
 	margin-left: var(--padding-from-edges);
@@ -509,22 +531,23 @@ body.locked>.wrapper{
 	height: 100%;
 	max-width: 100%;
 	max-height: 100%;
+	transition: all .3s;
 }
 .links-item:hover>img{
-	/*transform: scale(2);*/
 	opacity: .5;
 }
 
 .contact{
 	padding-top: var(--padding-from-top);
+	min-height: 700px;
 }
 .contact>.section-heading{
 	padding-right: var(--padding-from-edges);
 }
 .contact-map{
 	width: 50%;
-	height: 100vh;
-	margin-top: calc(0px - var(--padding-from-top) - 50px);
+	height: calc(100vh + var(--padding-from-top));
+	margin-top: calc(0px - var(--padding-from-top)*2);
 }
 .contact-text{
 	width: 50%;
@@ -572,6 +595,7 @@ body.locked>.wrapper{
 	align-items: center;
 	color: #fefefe;
 	text-decoration: none;
+	transition: all .3s;
 }
 .social-links>a:hover{
 	color: var(--color-yellow);
@@ -602,7 +626,11 @@ body.locked>.wrapper{
 		margin-top: 50px
 	}
 	.section-heading{
+		height: 50px;
 		font-size: 2.8em
+	}
+	.section-heading.animation{
+		height: 50px
 	}
 	.section-heading>span{
 		height: 12px
@@ -614,8 +642,9 @@ body.locked>.wrapper{
 		margin-top: 200px
 	}
 	.about-text>.photo{
-		height: 520px
-	}.attractions-articles>.article.first>.photo{
+		height: 660px
+	}
+	.attractions-articles>.article.first>.photo{
 		height: 460px
 	}
 	.attractions-articles>.article.second>.photo{
@@ -628,7 +657,7 @@ body.locked>.wrapper{
 		height: 360px
 	}
 	.contact-map{
-		margin-top: calc(0px - var(--padding-from-top) - 43px);
+		margin-top: calc(0px - var(--padding-from-top) - 50px);
 	}
 }
 
@@ -811,6 +840,7 @@ body.locked>.wrapper{
 		width: 50%;
 		height: calc(100vw / 2 - 2 * var(--padding-from-edges));
 	}
+
 	.contact>.d-flex{
 		flex-wrap: wrap;
 	}
@@ -871,3 +901,6 @@ body.locked>.wrapper{
 		min-height: 870px;
 	}
 }
+
+
+
