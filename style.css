@@ -41,6 +41,10 @@ body.locked>.wrapper{
 .d-flex{
 	display: flex;
 }
+.overflowy-hidden{
+	/*overflow-y: hidden;*/
+	overflow: hidden;
+}
 .pos-relative{
 	position: relative;
 }
@@ -77,7 +81,7 @@ body.locked>.wrapper{
 	height: 42px;
 	justify-content: center;
 	align-items: center;
-	font-size: 32px;
+	font-size: 1.2em;
 	padding: 5px 20px;
 	border: 1px solid #000;
 	color:  #000;
@@ -452,6 +456,7 @@ body.locked>.wrapper{
 	width: 100%;
 	justify-content: flex-end;
 	margin-top: calc(0px - var(--padding-from-top));
+	height: 550px;
 }
 .attractions-articles>.article.second>.text{
 	width: 25%;
@@ -468,7 +473,7 @@ body.locked>.wrapper{
 
 
 .modern-teaching{
-	margin-top: calc(0px - var(--padding-from-edges) * 2);
+	margin-top: calc(0px - var(--padding-from-top) * 2);
 }
 .modern-teaching>.section-heading{
 	padding-left: 50%;
