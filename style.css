@@ -461,7 +461,7 @@ body.locked>.wrapper{
 	width: 100%;
 	justify-content: flex-end;
 	margin-top: calc(0px - var(--padding-from-top));
-	height: 550px;
+	height: 440px;
 }
 .attractions-articles>.article.second>.text{
 	width: 25%;
@@ -701,8 +701,11 @@ body.locked>.wrapper{
 	.attractions-articles>.article.first>.photo{
 		height: 460px
 	}
-	.attractions-articles>.article.second>.photo{
+	.attractions-articles>.article.second{
 		height: 440px
+	}
+	.attractions-articles>.article.second>.photo{
+		height: 400px
 	}
 	.attractions-articles>.article.second>.photo>img{
 		height: 100%;
