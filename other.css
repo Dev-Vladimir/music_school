@@ -240,6 +240,40 @@ h1:before{
 .article>.photo>img{
 	width: 100%;
 }
+.footer{
+	background: var(--color-dark-grey);
+	padding: var(--padding-from-top) var(--padding-from-edges);
+	color: #fefefe;
+	text-align: center;
+	font-size: 1.5em;
+}
+.social-links{
+	padding-top: 20px;
+	width: 40%;
+	margin:auto;
+	justify-content: space-between;
+}
+.social-links>a{
+	display: flex;
+	height: 40px; width: 40px;
+	border:  1px solid #fefefe;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	color: #fefefe;
+	text-decoration: none;
+	transition: all .3s;
+}
+.social-links>a:hover{
+	color: var(--color-yellow);
+	border: 1px solid var(--color-yellow);
+}
+.social-links>a>i{
+	transition: none;
+}
+.copyright{
+	margin-top: var(--padding-from-top);
+}
 
 @media screen and (max-width: 1380px){
 	body{
