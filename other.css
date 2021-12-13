@@ -158,7 +158,7 @@ h3{
 	display: none;
 }
 .nav-menu li>ul>li{
-	height: 50px;
+	height: 40px;
 }
 .nav-menu li:hover>ul{
 	display: block;
@@ -192,7 +192,7 @@ h3{
 	justify-content: space-between;
 }
 .page-content{
-	width: 62.5%;
+	width: 75%;
 }
 .right-sidebar{
 	width: 25%;
@@ -215,9 +215,7 @@ h3{
 h1{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	margin-left: calc(0px - var(--padding-from-edges));
-	flex: 1;
 	font-size: 2.4em;
 }
 h1:before{
@@ -227,7 +225,12 @@ h1:before{
 	width: calc(20% + var(--padding-from-edges));
 	margin-right: 10px;
 }
+.article{
+	padding-right: 12.5%;
+}
 .article>h1{
+	justify-content: space-between;
+	flex: 1;
 	margin-bottom: var(--padding-from-top);
 }
 .article>p:not(first-child){
@@ -239,6 +242,74 @@ h1:before{
 }
 .article>.photo>img{
 	width: 100%;
+}
+.gallery{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-right: var(--padding-from-edges);
+}
+.gallery-item{
+	width: 32%;
+	/*height: 360px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.gallery-item>img{
+	max-width: 100%;
+	max-height: 100%;
+	cursor: pointer;
+	transition: all .3s;
+}
+.gallery-item>img:hover{
+	box-shadow: 0 0 10px rgba(0,0,0,.5)
+}
+.documents{
+	margin-top: 20px;
+	padding-right: 12.5%;
+}
+.document-item{
+	color: var(--color-dark-grey);
+	align-items: center;
+	margin-bottom: 20px;
+}
+.document-item:hover{
+	color:  #000;
+	text-decoration: underline;
+}
+.document-item>.info{
+	position: relative;
+	width: 100px;
+}
+.document-item>.title{
+	flex:  1;
+	font-size: 1.6em;
+}
+.document-item>.info>.icon{
+	width: 80px; height: 80px;
+	background: url("https://forma1.ru//image/mods/signature.png");
+	background-size: cover;
+	filter:  grayscale(0.7);
+	transition: all .3s;
+}
+.document-item:hover>.info>.icon{
+	filter: none;
+}
+.document-item>.info>.text{
+	display: none;
+}
+.document-item>.info:hover>.text{
+	display: flex;
+	position: absolute;
+	top: -50px; left: 0;
+	width: 50vw;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	background: var(--color-yellow);
 }
 .footer{
 	background: var(--color-dark-grey);
@@ -293,5 +364,14 @@ h1:before{
 	}
 	.header-logo__title{
 		font-size: 18px
+	}
+	.gallery-item{
+		/*height: 260px*/
+	}
+	.document-item>.info{
+		width: 60px
+	}
+	.document-item>.info>.icon{
+		width: 40px; height: 40px
 	}
 }
